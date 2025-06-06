@@ -1,0 +1,2 @@
+module Master::MiddleHelper
+end

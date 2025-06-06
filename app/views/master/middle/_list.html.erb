@@ -1,0 +1,18 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col"><%= Master::Middle.human_attribute_name("id") %></th>
+        <th scope="col"><%= Master::Middle.human_attribute_name("name") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% middles.each do |middle| %>
+        <tr class="align-middle">
+          <td><%= middle.id %></td>
+          <td><%= middle.name %></td>
+          <td><%= link_to t("common.delete.button"), master_middle_path(middle.id), class: "btn btn-danger btn-sm", data: { turbo_method: :delete, turbo_confirm: t("common.delete.confirm") } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= paginate middles %>

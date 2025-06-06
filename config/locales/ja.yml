@@ -1,0 +1,33 @@
+ja:
+  site_title: "エラー共有システム"
+  common:
+    create_new: "新規作成"
+    delete:
+      button: "削除"
+      confirm: "削除しますか？"
+    search:
+      submit: "検索"
+      clear: "全件表示"
+  main:
+    index:
+      pages:
+        records: "エラー記録"
+        middles: "ミドルマスタ"
+  activerecord:
+    errors:
+      models:
+        master:
+          middle:
+            attributes:
+              name:
+                blank: "を入力して下さい"
+    attributes:
+      master:
+        middle:
+          name: "ミドル名"
+          id: "id"
+  helpers: 
+    submit:
+      create: 登録する
+      update: 更新する
+      submit: 保存する
