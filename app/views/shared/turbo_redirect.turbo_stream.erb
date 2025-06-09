@@ -1,0 +1,2 @@
+<% @url = root_path if @url.blank? %>
+<%= turbo_stream_action_tag "redirect", url: @url %>

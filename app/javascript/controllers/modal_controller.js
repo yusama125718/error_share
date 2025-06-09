@@ -2,6 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
   connect() {
-    this.element.textContent = "Hello World!"
+    this.modal = new bootstrap.Modal(this.element)
+    this.modal.show()
   }
 }

@@ -1,0 +1,16 @@
+<%= form_with model: model, url: url do |f| %>
+  <div class="row align-items-center p-2 g-3">
+    <div class="col-md-1">
+      <%= f.label Master::Middle.human_attribute_name("name"), class: "col-form-label" %>
+    </div>
+    <div class="col-md-2">
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+  </div>
+  <% unless model.errors[:name].blank? %>
+    <%= render partial: "/shared/error", locals: { model: model, attribute: :name } %>
+  <% end %>
+  <div class="p-2">
+    <%= f.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>

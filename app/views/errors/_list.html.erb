@@ -1,0 +1,25 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col"><%= Error.human_attribute_name("title") %></th>
+        <th scope="col"><%= Error.human_attribute_name("content") %></th>
+        <th scope="col"><%= Error.human_attribute_name("created_at") %></th>
+        <th scope="col"><%= Error.human_attribute_name("resolved") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% errors.each do |error| %>
+        <tr class="align-middle">
+          <td><%= error.title %></td>
+          <td><%= error.content %></td>
+          <td><%= l error.created_at %></td>
+          <td><%= error.content ? "⚪︎" : "×" %></td>
+          <td>
+            <%= link_to t("common.edit"), edit_master_error_path(error.id), class: "btn btn-primary btn-sm" %>
+            <%= link_to t("common.delete.button"), master_error_path(error.id), class: "btn btn-danger btn-sm", data: { turbo_method: :delete, turbo_confirm: t("common.delete.confirm") } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= paginate middles %>

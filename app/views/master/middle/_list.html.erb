@@ -10,7 +10,10 @@
         <tr class="align-middle">
           <td><%= middle.id %></td>
           <td><%= middle.name %></td>
-          <td><%= link_to t("common.delete.button"), master_middle_path(middle.id), class: "btn btn-danger btn-sm", data: { turbo_method: :delete, turbo_confirm: t("common.delete.confirm") } %></td>
+          <td>
+            <%= link_to t("common.edit"), edit_master_middle_path(middle.id), class: "btn btn-primary btn-sm" %>
+            <%= link_to t("common.delete.button"), master_middle_path(middle.id), class: "btn btn-danger btn-sm", data: { turbo_method: :delete, turbo_confirm: t("common.delete.confirm") } %>
+          </td>
         </tr>
       <% end %>
     </tbody>

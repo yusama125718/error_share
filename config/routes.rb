@@ -14,6 +14,9 @@ Rails.application.routes.draw do
 
   root to: "main#index"
 
+  resources :error do
+  end
+
   namespace :master do
     resources :middle do
     end

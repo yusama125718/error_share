@@ -1,0 +1,23 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col"><%= Master::Version.human_attribute_name(:id) %></th>
+      <th scope="col"><%= Master::Version.human_attribute_name(:name) %></th>
+      <th scope="col"><%= Master::Version.human_attribute_name(:middle_id) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% versions.each do |version| %>
+      <tr class="align-middle">
+        <td><%= version.id %></td>
+        <td><%= version.name %></td>
+        <td><%= version.middle.name %></td>
+        <td>
+          <%= link_to t("common.edit"), edit_master_version_path(version.id), class: "btn btn-primary btn-sm" %>
+          <%= link_to t("common.delete.button"), master_version_path(version.id), class: "btn btn-danger btn-sm", data: { turbo_method: :delete, turbo_confirm: t("common.delete.confirm") } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate versions %>

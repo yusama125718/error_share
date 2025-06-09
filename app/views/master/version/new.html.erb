@@ -1,0 +1,5 @@
+<h1><%= t(".title") %></h1>
+<%= link_to t("common.back.index"), master_version_index_path, class: "backlink" %>
+<div id="editform">
+  <%= render partial: "form", locals: { model: @version, url: master_version_index_path } %>
+</div>

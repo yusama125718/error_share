@@ -1,0 +1,8 @@
+<div>
+  <p><%= t "master.middle.index.version_exists" %></p>
+  <p><%= t "common.delete.confirm" %></p>
+</div>
+<div>
+  <%= link_to t("common.delete.button"), master_middle_path(@middle.id, confirm: 1), class: "btn btn-danger btn-sm", data: { turbo_method: :delete } %>
+  <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal"><%= t "common.cancel" %></button>
+</div>

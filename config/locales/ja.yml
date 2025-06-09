@@ -2,32 +2,76 @@ ja:
   site_title: "エラー共有システム"
   common:
     create_new: "新規作成"
+    edit: "編集"
+    cancel: "キャンセル"
     delete:
       button: "削除"
       confirm: "削除しますか？"
     search:
       submit: "検索"
       clear: "全件表示"
+    create:
+      success: "作成しました"
+      error: "作成に失敗しました"
+    update:
+      success: "更新しました"
+      error: "更新に失敗しました"
+    destroy:
+      success: "削除しました"
+      error: "削除に失敗しました"
+    back:
+      top: "←トップページへ戻る"
+      index: "←一覧へ戻る"
+    no_data: "データがありません"
   main:
     index:
       pages:
         records: "エラー記録"
         middles: "ミドルマスタ"
+        versions: "バージョンマスタ"
+  master:
+    middle:
+      index:
+        title: "ミドルマスタ管理"
+        version_exists: "このミドルにはバージョンマスタが紐づいています。削除すると紐づいているバージョンマスタも削除されます"
+      new:
+        title: "ミドルマスタ新規作成"
+    version:
+      index:
+        title: "バージョンマスタ管理"
+      new:
+        title: "バージョンマスタ新規作成"
+      edit:
+        title: "バージョンマスタ編集"
   activerecord:
     errors:
       models:
-        master:
-          middle:
-            attributes:
-              name:
-                blank: "を入力して下さい"
+        master/version:
+          attributes:
+            middle:
+              required: "選択して下さい"
     attributes:
-      master:
-        middle:
-          name: "ミドル名"
-          id: "id"
+      error:
+        tittle: "タイトル"
+        content: "内容"
+        resolved: "解決済み"
+        created_at: "記録日"
+      master/middle:
+        name: "ミドル名"
+        id: "id"
+      master/version:
+        name: "バージョン名"
+        id: "id"
+        middle_id: "ミドル"
   helpers: 
     submit:
-      create: 登録する
-      update: 更新する
-      submit: 保存する
+      create: "登録"
+      update: "更新"
+      submit: "保存"
+  date:
+    formats:
+      default: "%Y/%m/%d %H:%M"
+  errors:
+    messages:
+      taken: "既に存在します"
+      blank: "入力して下さい"

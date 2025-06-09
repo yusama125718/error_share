@@ -4,8 +4,8 @@
   <%= render partial: "filter" %>
 </div>
 <div class="p-2">
-  <%= link_to t("common.create_new"), new_master_middle_path, class: "btn btn-primary" %>
+  <%= link_to t("common.create_new"), new_master_version_path, class: "btn btn-primary" %>
 </div>
 <div id="content-list" class="list p-2">
-  <%= render partial: "list", locals: { middles: @middles } %>
+  <%= render partial: "list", locals: { versions: @versions } %>
 </div>
