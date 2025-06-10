@@ -29,6 +29,13 @@ ja:
         records: "エラー記録"
         middles: "ミドルマスタ"
         versions: "バージョンマスタ"
+  error:
+    index:
+      title: "エラー一覧"
+    new: 
+      title: "新規エラー登録"
+    form:
+      search_version: "バージョンを取得"
   master:
     middle:
       index:
@@ -51,11 +58,13 @@ ja:
             middle:
               required: "選択して下さい"
     attributes:
-      error:
+      error_content:
         tittle: "タイトル"
-        content: "内容"
+        content: "エラー内容"
         resolved: "解決済み"
         created_at: "記録日"
+        middle_id: "ミドル名"
+        version_id: "バージョン"
       master/middle:
         name: "ミドル名"
         id: "id"

@@ -1,0 +1,56 @@
+<%= form_with model: model, url: url do |f| %>
+  <div class="row align-items-center p-2 g-3">
+    <div class="col-md-1">
+      <%= f.label ErrorContent.human_attribute_name(:middle_id), class: "col-form-label" %>
+    </div>
+    <div class="col-md-2">
+      <%= f.collection_select :middle_id, Master::Middle.all, :id, :name, { include_blank: true }, class: 'form-control form-select' %>
+    </div>
+    <div class="col-md-2">
+      <button class="btn btn-primary" onClick="SearchVersion()"><%= t "error.form.search_version" %></button>
+    </div>
+  </div>
+  <% unless model.errors[:middle].blank? %>
+    <%= render partial: "/shared/error", locals: { model: model, attribute: :middle } %>
+  <% end %>
+  <div class="row align-items-center p-2 g-3">
+    <div class="col-md-1">
+      <%= f.label ErrorContent.human_attribute_name(:version_id), class: "col-form-label" %>
+    </div>
+    <div class="col-md-2">
+      <% if @versions.blank? %>
+        <%= f.select :version_id, {}, { include_blank: true }, class: 'form-control form-select' %>
+      <% else %>
+        <%= f.collection_select :version_id, @versions.all, :id, :name, { include_blank: true, disable: true }, class: 'form-control form-select' %>
+      <% end %>
+    </div>
+  </div>
+  <% unless model.errors[:version].blank? %>
+    <%= render partial: "/shared/error", locals: { model: model, attribute: :version } %>
+  <% end %>
+  <div class="row align-items-center p-2 g-3">
+    <div class="col-md-1">
+      <%= f.label ErrorContent.human_attribute_name("title"), class: "col-form-label" %>
+    </div>
+    <div class="col-md-2">
+      <%= f.text_field :title, class: 'form-control' %>
+    </div>
+  </div>
+  <% unless model.errors[:title].blank? %>
+    <%= render partial: "/shared/error", locals: { model: model, attribute: :title } %>
+  <% end %>
+  <div class="row align-items-center p-2 g-3">
+    <div class="col-md-1">
+      <%= f.label ErrorContent.human_attribute_name("content"), class: "col-form-label" %>
+    </div>
+    <div class="col-md-2">
+      <%= f.text_area :content, class: 'form-control' %>
+    </div>
+  </div>
+  <% unless model.errors[:content].blank? %>
+    <%= render partial: "/shared/error", locals: { model: model, attribute: :content } %>
+  <% end %>
+  <div class="p-2">
+    <%= f.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>

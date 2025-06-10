@@ -1,7 +1,7 @@
-<%= search_form_for @q, url: master_middle_index_path do |f| %>
+<%= search_form_for @q, url: error_index_path do |f| %>
   <div class="row align-items-center p-2 g-3">
     <div class="col-md-1">
-      <%= f.label Error.human_attribute_name(:title), class: "col-form-label" %>
+      <%= f.label ErrorContent.human_attribute_name(:title), class: "col-form-label" %>
     </div>
     <div class="col-md-2">
       <%= f.search_field :title_cont, class: 'form-control' %>
@@ -9,10 +9,10 @@
   </div>
   <div class="row align-items-center p-2 g-3">
     <div class="col-md-1">
-      <%= f.label Error.human_attribute_name(:content), class: "col-form-label" %>
+      <%= f.label ErrorContent.human_attribute_name(:content), class: "col-form-label" %>
     </div>
     <div class="col-md-2">
-      <%= f.search_field :name_cont, class: 'form-control' %>
+      <%= f.text_area :content_cont, class: 'form-control' %>
     </div>
   </div>
   <div class="row p-2">
@@ -20,7 +20,7 @@
       <%= f.submit t("common.search.submit"), class: 'btn btn-primary' %>
     </div>
     <div class="col-md-2 p-1">
-      <%= link_to t("common.search.clear"), master_middle_index_path, class: 'btn btn-secondary' %>
+      <%= link_to t("common.search.clear"), error_index_path, class: 'btn btn-secondary' %>
     </div>
   </div>
 <% end %>

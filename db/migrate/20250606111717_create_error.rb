@@ -1,6 +1,6 @@
 class CreateError < ActiveRecord::Migration[8.0]
   def change
-    create_table :errors do |t|
+    create_table :error_contents do |t|
       t.integer :middle_id
       t.integer :version_id
       t.string :title

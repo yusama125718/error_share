@@ -1,4 +1,4 @@
-class Error < ApplicationRecord
+class ErrorContent < ApplicationRecord
   has_many :failure, dependent: :destroy, foreign_key: :error_id
   has_many :solution, dependent: :destroy, foreign_key: :error_id
 

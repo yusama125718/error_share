@@ -1,4 +1,5 @@
 class Master::Version < ApplicationRecord
+  has_many :error_content, foreign_key: :version_id
   belongs_to :middle
 
   validates :name, presence: true

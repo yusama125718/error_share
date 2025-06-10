@@ -1,3 +1,3 @@
 class Failure < ApplicationRecord
-  belongs_to :error
+  belongs_to :error_content
 end

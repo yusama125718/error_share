@@ -1,0 +1,6 @@
+<%= turbo_stream.update "error_content_version_id" do %>
+  <option value label=" "></option>
+  <%= @versions.each do |version| %>
+    <option value=<%= version.id %> label="<%= version.name %>"></option>
+  <% end %>
+<% end %>

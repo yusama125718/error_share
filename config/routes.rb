@@ -19,6 +19,9 @@ Rails.application.routes.draw do
 
   namespace :master do
     resources :middle do
+      member do
+        get :versions
+      end
     end
 
     resources :version do
